@@ -1,34 +1,36 @@
 ﻿using System;
 
-namespace Practise_1
+namespace ConsoleApp1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int a = 0;
-            bool a1;
-            int b = 0;
-            bool b1;
-            int c = 0;
 
-            Console.WriteLine("Add 2 numbers");
+            string inputString;
+            int total = 0;
 
-            Console.Write("Enter number 1 - ");
+            Console.WriteLine("Add 2 numbers - example 1+2 - please do not enter anything apart from numbers");
 
-            a1 = int.TryParse(Console.ReadLine(), out a);
+            Console.Write("Enter numbers - ");
 
-            Console.Write("Enter number 2 - ");
+            inputString = Console.ReadLine();
 
-            b1 = int.TryParse(Console.ReadLine(), out b);
-            
-            c = a + b;
 
-            Console.WriteLine("The sum is - " + c);
+            Console.WriteLine(inputString);
 
+            String[] inputNumber = inputString.Split("+");
+
+            foreach (String a in inputNumber)
+            {
+                //Console.WriteLine(a);
+                int chkNum = 0;
+                int.TryParse(a, out chkNum);
+                total = total + chkNum;
+            }
+
+            Console.WriteLine("Final Total - " + total);
 
         }
-
-        
     }
 }
